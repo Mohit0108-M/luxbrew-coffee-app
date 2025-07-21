@@ -18,7 +18,7 @@ export default function HomePage() {
     queryKey: ["/api/products/popular"],
   });
 
-  const categories = ["All", "Espresso", "Cappuccino", "Latte", "Americano", "Mocha"];
+  const categories = ["All", "Espresso", "Cappuccino", "Latte", "Americano", "Mocha", "Matcha", "Cupcakes", "Pastries", "Snacks"];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase());

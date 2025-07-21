@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertCartItemSchema, insertWishlistItemSchema } from "@shared/schema";
+import { insertCartItemSchema, insertWishlistItemSchema, insertUserSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Products
@@ -154,6 +154,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ isInWishlist });
     } catch (error) {
       res.status(500).json({ message: "Failed to check wishlist status" });
+    }
+  });
+
+  // User routes
+  app.post("/api/users", async (req, res) => {
+    try {
+      const validatedData = insertUserSchema.parse(req.body);
+      
+      // Check if mobile number already exists
+      const existingUser = await storage.getUserByMobile(validatedData.mobileNumber);
+      if (existingUser) {
+        return res.status(400).json({ message: "Mobile number already registered" });
+      }
+      
+      const user = await storage.createUser(validatedData);
+      res.status(201).json(user);
+    } catch (error) {
+      res.status(400).json({ message: "Invalid user data" });
+    }
+  });
+
+  app.get("/api/users/mobile/:mobileNumber", async (req, res) => {
+    try {
+      const { mobileNumber } = req.params;
+      const user = await storage.getUserByMobile(mobileNumber);
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+      res.json(user);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch user" });
+    }
+  });
+
+  app.get("/api/users/session/:sessionId", async (req, res) => {
+    try {
+      const { sessionId } = req.params;
+      const user = await storage.getUserBySessionId(sessionId);
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+      res.json(user);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch user" });
     }
   });
 

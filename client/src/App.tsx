@@ -12,6 +12,7 @@ import CartPage from "@/pages/cart";
 import WishlistPage from "@/pages/wishlist";
 import ProfilePage from "@/pages/profile";
 import BottomNavigation from "@/components/bottom-navigation";
+import { useLocation } from "wouter";
 
 function Router() {
   return (
@@ -28,14 +29,23 @@ function Router() {
   );
 }
 
+function AppContent() {
+  const [location] = useLocation();
+  const hideNavigation = location === "/";
+  
+  return (
+    <div className="min-h-screen bg-cream-white">
+      <Router />
+      {!hideNavigation && <BottomNavigation />}
+    </div>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen bg-cream-white">
-          <Router />
-          <BottomNavigation />
-        </div>
+        <AppContent />
         <Toaster />
       </TooltipProvider>
     </QueryClientProvider>

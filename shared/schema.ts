@@ -31,6 +31,13 @@ export const wishlistItems = pgTable("wishlist_items", {
   createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
+export const users = pgTable("users", {
+  id: serial("id").primaryKey(),
+  mobileNumber: text("mobile_number").notNull().unique(),
+  sessionId: text("session_id").notNull().unique(),
+  createdAt: timestamp("created_at").notNull().defaultNow(),
+});
+
 export const insertProductSchema = createInsertSchema(products).omit({
   id: true,
 });
@@ -44,9 +51,16 @@ export const insertWishlistItemSchema = createInsertSchema(wishlistItems).omit({
   createdAt: true,
 });
 
+export const insertUserSchema = createInsertSchema(users).omit({
+  id: true,
+  createdAt: true,
+});
+
 export type Product = typeof products.$inferSelect;
 export type CartItem = typeof cartItems.$inferSelect;
 export type WishlistItem = typeof wishlistItems.$inferSelect;
+export type User = typeof users.$inferSelect;
 export type InsertProduct = z.infer<typeof insertProductSchema>;
 export type InsertCartItem = z.infer<typeof insertCartItemSchema>;
 export type InsertWishlistItem = z.infer<typeof insertWishlistItemSchema>;
+export type InsertUser = z.infer<typeof insertUserSchema>;
