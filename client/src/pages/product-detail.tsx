@@ -173,7 +173,7 @@ export default function ProductDetailPage() {
             <div className="flex items-center justify-between mb-4">
               <h1 className="font-playfair text-3xl font-bold">{product.name}</h1>
               <span className="font-bold text-2xl text-rich-brown">
-                ${getSizePrice(product.price, selectedSize).toFixed(2)}
+                ₹{getSizePrice(product.price, selectedSize).toFixed(2)}
               </span>
             </div>
 

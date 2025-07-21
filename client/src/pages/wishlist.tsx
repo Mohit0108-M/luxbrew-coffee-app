@@ -184,7 +184,7 @@ export default function WishlistPage() {
                       <span className="text-xs text-warm-gray ml-2">({item.product.rating})</span>
                     </div>
                     <div className="flex items-center justify-between">
-                      <span className="font-bold text-lg text-rich-brown">${item.product.price}</span>
+                      <span className="font-bold text-lg text-rich-brown">₹{item.product.price}</span>
                       <div className="flex gap-2">
                         <button
                           onClick={() => handleAddToCart(item.product.id)}

@@ -107,7 +107,7 @@ export default function ProductsPage() {
                     <span className="text-xs text-warm-gray ml-2">({product.rating})</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-bold text-lg text-rich-brown">${product.price}</span>
+                    <span className="font-bold text-lg text-rich-brown">₹{product.price}</span>
                     <button className="text-warm-gray hover:text-light-gold transition-smooth">
                       <Heart className="w-5 h-5" />
                     </button>

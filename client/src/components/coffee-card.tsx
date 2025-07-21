@@ -41,7 +41,7 @@ export default function CoffeeCard({ product, onClick }: CoffeeCardProps) {
         <span className="text-xs text-warm-gray ml-2">{product.rating}</span>
       </div>
       <div className="flex items-center justify-between">
-        <span className="font-bold text-rich-brown">${product.price}</span>
+        <span className="font-bold text-rich-brown">₹{product.price}</span>
         <button 
           className="bg-light-gold text-rich-brown rounded-full w-8 h-8 flex items-center justify-center transition-smooth hover:bg-coffee-tan"
           onClick={(e) => {
