@@ -1,0 +1,57 @@
+Design a fully responsive, luxurious web app for a premium coffee shop brand named **LuxBrew**, inspired by a high-end mobile UI. The visual style should exactly match this mobile design layout:
+
+**Color Palette:**
+- Cream White: #FDF5E6
+- Light Beige: #F5E9DA
+- Light Gold: #E5C084
+- Rich Brown: #3B1D0F
+- Coffee Tan: #C89F77
+- Text accents in Black and Warm Gray
+
+**Pages/Sections:**
+
+1. **Splash / Welcome Page**
+   - Fullscreen background image of rich coffee being poured (dark mood).
+   - Bold text: “Choice your Favorite Coffee”
+   - Subtitle: “The best grain, the finest roast, the powerful flavor”
+   - Large gold “Get Started” button
+
+2. **Home Page**
+   - Search bar at the top
+   - Promo card: “Buy One, Get One Free” offer with image
+   - Horizontal category chips: Espresso, Cappuccino, Latte, Americano
+   - “Popular Coffees” carousel with card-style items
+   - Bottom navigation bar: Explore | Cart | Wishlist | Orders | Profile
+
+3. **List Page**
+   - Filterable coffee list with name, rating stars, price
+   - Coffee image in horizontal card format
+   - Beige/light background
+
+4. **Product Detail Page**
+   - Full coffee image with elegant wooden background
+   - Options to choose coffee size (Small, Medium, Large)
+   - Quantity selector
+   - Price and “Add to Cart” button
+   - Smooth star rating and description area
+
+5. **Cart Page**
+   - List of selected items with quantity and total price
+   - Discount code input box and apply button
+   - Checkout summary: subtotal, tax, delivery, and total
+   - “Proceed to Checkout” button with clean UI
+
+**Design Notes:**
+- Use modern fonts: Playfair Display or DM Serif for headings, Poppins or Inter for text.
+- Rounded edges on all cards and buttons.
+- Subtle shadows and clean dividers.
+- Soft transitions and micro animations (e.g. button hovers, smooth quantity change).
+- Mobile-first layout, but responsive to tablet and desktop.
+
+**Optional Features:**
+- Wishlist with heart icons
+- Profile page with order history
+- Light mode only (luxury beige & brown tones)
+- No sign-up required
+
+Please generate full web app code based on this layout.
