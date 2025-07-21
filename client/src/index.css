@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  /* LuxBrew Color Palette */
+  --cream-white: hsl(39, 70%, 96%);
+  --light-beige: hsl(33, 43%, 92%);
+  --light-gold: hsl(38, 54%, 71%);
+  --rich-brown: hsl(20, 56%, 16%);
+  --coffee-tan: hsl(25, 41%, 63%);
+  --warm-gray: hsl(32, 23%, 53%);
+
+  /* Updated Theme Colors */
+  --background: var(--cream-white);
+  --foreground: var(--rich-brown);
+  --muted: var(--light-beige);
+  --muted-foreground: var(--warm-gray);
+  --popover: var(--cream-white);
+  --popover-foreground: var(--rich-brown);
+  --card: var(--cream-white);
+  --card-foreground: var(--rich-brown);
+  --border: hsl(33, 25%, 85%);
+  --input: var(--light-beige);
+  --primary: var(--light-gold);
+  --primary-foreground: var(--rich-brown);
+  --secondary: var(--light-beige);
+  --secondary-foreground: var(--rich-brown);
+  --accent: var(--light-gold);
+  --accent-foreground: var(--rich-brown);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: var(--light-gold);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-poppins antialiased bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .text-cream-white {
+    color: var(--cream-white);
+  }
+  
+  .text-light-beige {
+    color: var(--light-beige);
+  }
+  
+  .text-light-gold {
+    color: var(--light-gold);
+  }
+  
+  .text-rich-brown {
+    color: var(--rich-brown);
+  }
+  
+  .text-coffee-tan {
+    color: var(--coffee-tan);
+  }
+  
+  .text-warm-gray {
+    color: var(--warm-gray);
+  }
+
+  .bg-cream-white {
+    background-color: var(--cream-white);
+  }
+  
+  .bg-light-beige {
+    background-color: var(--light-beige);
+  }
+  
+  .bg-light-gold {
+    background-color: var(--light-gold);
+  }
+  
+  .bg-rich-brown {
+    background-color: var(--rich-brown);
+  }
+  
+  .bg-coffee-tan {
+    background-color: var(--coffee-tan);
+  }
+  
+  .bg-warm-gray {
+    background-color: var(--warm-gray);
+  }
+
+  .border-light-beige {
+    border-color: var(--light-beige);
+  }
+  
+  .border-light-gold {
+    border-color: var(--light-gold);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(59, 29, 15, 0.8), rgba(59, 29, 15, 0.6));
+  }
+  
+  .card-shadow {
+    box-shadow: 0 8px 25px rgba(59, 29, 15, 0.1);
+  }
+  
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .star-rating {
+    color: var(--light-gold);
+  }
+
+  .coffee-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(59, 29, 15, 0.15);
+  }
+
+  .size-option {
+    border: 2px solid var(--light-beige);
+    background: var(--cream-white);
+  }
+  
+  .size-option.selected {
+    border-color: var(--light-gold);
+    background: var(--light-gold);
+    color: var(--rich-brown);
+  }
+
+  .quantity-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--light-gold);
+    color: var(--rich-brown);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+  
+  .quantity-btn:hover {
+    background: var(--coffee-tan);
+    transform: scale(1.1);
+  }
+
+  .carousel-container {
+    scroll-behavior: smooth;
+  }
+}
